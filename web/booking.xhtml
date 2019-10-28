@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+   <h:body>
+         <h:form>
+             
+             <p:growl id="messages"/>
+ 
+             <p:menubar style="background-color:darkgreen">
+        <f:facet name="options">
+
+            <p:commandButton value="My details" style="font-size:small" action="myDetails" />
+        </f:facet>
+        
+        <f:facet name="options">
+
+            <p:commandButton value="Book Appointment" style="font-size:small" action="bookAppointment" />
+        </f:facet>
+        
+        <f:facet name="options">
+
+            <p:commandButton value="Web Booking" style="font-size:small" action="webBooking" />
+        </f:facet>
+       
+        <f:facet name="options">
+
+            <p:commandButton value="Cancel booking" style="font-size:small" action="cancelBooking" />
+        </f:facet>
+        
+        <f:facet name="options">
+
+            <p:commandButton value="Search Doctor" style="font-size:small" action="searchDoctor" />
+        </f:facet>
+      
+        <f:facet name="options">
+
+            <p:commandButton value="Feedback" style="font-size:small" action="feedback" />
+        </f:facet>
+        <f:facet name="options">
+
+            <p:commandButton value="Logout" style="font-size:small" action="signUp_result" />
+        </f:facet>
+    </p:menubar>
+             
+                <center>
+
+                    <div class="bg-info">
+                        <h1>New Booking</h1>
+                        
+                        <center>
+                            <h:panelGrid columns="2">
+
+                <h:outputLabel value="Appointment Id: "/>
+                 <p:inputText value="#{patient.id}" />
+                                
+        <h:outputLabel value="Category: "/>         
+        <p:selectOneMenu>
+            
+            
+            <f:selectItem itemLabel="General Physician"/>
+            <f:selectItem itemLabel="Bone"/>
+            <f:selectItem itemLabel="Heart"/>
+            <f:selectItem itemLabel="Dentest"/>
+            <f:selectItem itemLabel="Neurologist"/>
+            <f:selectItem itemLabel="kidney"/>
+            <f:selectItem itemLabel="Select--"/>
+        </p:selectOneMenu>
+        
+        <h:outputLabel value="Doctor: "/>         
+        <p:selectOneMenu>
+            
+            
+            <f:selectItem itemLabel="Dr.Abc"/>
+            <f:selectItem itemLabel="Dr.Sharif"/>
+            <f:selectItem itemLabel="Dr.Osman"/>
+            <f:selectItem itemLabel="Select--"/>
+
+        </p:selectOneMenu>
+        
+         <p:outputLabel for="popup" value="Date:" />
+        <p:calendar id="popup" value="#{calendarView.date2}" />
+        
+         <p:growl id="growl" life="2000" />                         
+        <p:commandButton value="Check" id="ajax" update="growl" action="commandButton" style="margin-right:20px;" styleClass="ui-priority-primary" />
+                            </h:panelGrid>
+
+
+                        </center>
+                        
+                    </div>
+
+
+                </center>
+            </h:form>
+    </h:body>
+</html>
